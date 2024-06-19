@@ -1,36 +1,15 @@
-let x=0
-let y=0
-let size = 60
-
-
+let size = 1; 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background (203,77,99)
-  
+  background(0);
+  stroke (255);
 
-}
 
-function draw() {
-  strokeWeight (40)
-  point (x, y)
- 
-
-  
-  
-  if(random(1) <0.5){
- 
-    
-    line(x,y, x+size,y+size) 
-  } else  {
-     line (x,y+size,x+size,y)
-  };
-  x+= size;
-
-  if (x>width) {
-  x=0
-  y+=size;
-  
+  for (let x = 0; x < windowWidth; x += size) {
+    for (let y = 0; y < windowHeight; y += size) {
+      if (random() > 0.6) { 
+        line(x + size / 2, y, x + size / 2, y + size); 
+      }
+    }
   }
-  
-  
- }
+}
